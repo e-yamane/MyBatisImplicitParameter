@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test
+    initialization-mode: always
+
+logging:
+  level:
+    mybatis_implicit_parameter:
+      mapper: DEBUG

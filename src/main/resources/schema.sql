@@ -1,0 +1,1 @@
+create table SAMPLE(VALUE VARCHAR(100));
