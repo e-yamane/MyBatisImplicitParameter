@@ -29,11 +29,11 @@ public class CustomSqlSessionConfig {
             super(sqlSessionFactory);
         }
 
-        Object invoke(Method method, Object[] args) throws Throwable {
-            return makeHandle(method).bindTo(this).invokeWithArguments(args);
+        Object invokeParentMethod(Method method, Object[] args) throws Throwable {
+            return makeParentMethodHandle(method).bindTo(this).invokeWithArguments(args);
         }
 
-        MethodHandle makeHandle(Method method) throws Exception {
+        MethodHandle makeParentMethodHandle(Method method) throws Exception {
             return MethodHandles.lookup().findSpecial(SqlSessionTemplate.class, method.getName(),
                     MethodType.methodType(method.getReturnType(), method.getParameterTypes()), SqlSessionTemplateExt.class);
         }
@@ -46,7 +46,7 @@ public class CustomSqlSessionConfig {
                         if(hasParameter(method)) {
                             args[1] = addParameter(args[1]);
                         }
-                        return SqlSessionTemplateExt.this.invoke(method, args);
+                        return SqlSessionTemplateExt.this.invokeParentMethod(method, args);
                     }
 
                     boolean hasParameter(Method method) {
