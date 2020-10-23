@@ -26,30 +26,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group: "org.junit.vintage")
     }
-/*
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-actuator")
-	runtime("org.springframework.boot:spring-boot-starter-thymeleaf")
-	runtime("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.5.1")
-	compile("org.webjars:bootstrap:4.5.0")
-	compile("org.springframework.boot:spring-boot-devtools")
-
-    implementation("org.ff4j:ff4j-spring-boot-starter:1.8.6")
-    implementation("org.ff4j:ff4j-web:1.8.6")
-    implementation("org.springframework.boot:spring-boot-starter-security")
-
-    compile("org.apache.commons:commons-lang3:3.11")
-    implementation ("org.flywaydb:flyway-core")
-    runtimeOnly ("org.mariadb.jdbc:mariadb-java-client:2.7.0")
-
-    testImplementation("org.springframework.boot:spring-boot-starter-test") {
-        exclude(group: "org.junit.vintage")
-    }
-    testImplementation ("com.github.springtestdbunit:spring-test-dbunit:1.3.0")
-    testImplementation ("org.dbunit:dbunit:2.7.0")
-
-    testImplementation("com.codeborne:selenide:5.15.1")
-*/
 }
 
 test {
